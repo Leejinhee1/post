@@ -1,0 +1,20 @@
+<h1>Home#show</h1>
+<p>Find me in app/views/home/show.html.erb</p>
+
+제목: <%= @each_post.title %><br/>
+내용: <%= @each_post.content %>
+
+<hr>
+<form action="/comment" method="get">
+  내용: <input type="text" name="comment_content"><br>
+  <input type="hidden" name="id" value=<%= @each_post.id %>><br>
+  <input type="submit" value="제출">
+</form>
+
+
+<% @comment.each do |x| %>
+    <hr>
+    <%= x.content %>    
+<%end%>
+    
+<p><a href='/home/index'>목록보기</a></p>
